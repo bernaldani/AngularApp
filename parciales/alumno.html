@@ -1,0 +1,33 @@
+<h1><i class="fa fa-user"></i> Alumno</h1>
+<h4>{{ alumno.nombre }}</h4>
+<hr>
+
+<div class="row text-success animated fadeIn" ng-show="actualizado">
+	<div class="col-xs-12">Registro actualizado</div>
+</div>
+<div class="row">
+	<form ng-submit="guardarAlumno()">
+		<div ng-hide="creando">
+			<div class="col-xs-2 form-group">
+				<label class="control-label">Codigo:</label>
+				<input type="text" class="form-control" ng-model="alumno.codigo" readonly="readonly">
+			</div>
+		</div>
+		<div class="col-xs-6 form-group">
+			<label class="control-label">Nombre:</label>
+			<input type="text" class="form-control" ng-model="alumno.nombre" required>
+		</div>
+		<div class="col-xs-4 form-group">
+			<label class="control-label">Telefono:</label>
+			<input type="text" class="form-control" ng-model="alumno.telefono" ui-mask="{{ telefonoMask }}" required>
+		</div>
+		<div class="col-xs-6 form-group">
+			<label class="control-label">Direccion:</label>
+			<textarea class="form-control" ng-model="alumno.direccion" required></textarea>
+		</div>
+
+		<div class="col-xs-12" align="right">
+			<button type="submit" class="btn btn-success"><i class="fa fa-floppy-o"></i> Guardar Cambios</button>
+		</div>
+	</form>
+</div>
